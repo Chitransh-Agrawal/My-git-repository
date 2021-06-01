@@ -1,22 +1,24 @@
 package com.company;
 
-
-
 public class Flight {
     //attributes
     private String flightNumber, airlineName;
     int capacity, totalNumberOfBookedSeats;
+
     //methods
     public String getFlightDetails(){
         return "Flight Number : "+ this.getFlightNumber() + "Flight Name : "+this.getAirlineName();
     }
+
     public int getSeatAvailability(){
         return this.getCapacity()-this.getTotalNumberOfBookedSeats();
     }
+
     // constructor
     public Flight(){
         this("F-102","SpiceJet", 100, 20);
     }
+
     public Flight (String flightNumber, String airlineName, int capacity, int totalNumberOfBookedSeats){
         this.setFlightNumber(flightNumber);
         this.setAirlineName(airlineName);
@@ -31,7 +33,6 @@ public class Flight {
         this.setTotalNumberOfBookedSeats(flight.getTotalNumberOfBookedSeats());
 
     }
-
 
 //getters setters
 

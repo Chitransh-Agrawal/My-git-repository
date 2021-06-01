@@ -4,19 +4,35 @@ public class Passenger {
     // attributes
     Address address;
     Contact contact;
-    // methods
+    private static int idCounter=0;
 
+    // methods
+    public int getPassengerCount(){
+        return idCounter;
+    }
     public void registration (){
-        Passenger passenger = new Passenger();
         System.out.println("passenger registered");
     }
+
     public void bookTicket () {
         System.out.println("ticket booked");
     }
+
+    // passenger constructor
+    public Passenger(String name, String phone, String email, String Street, String City, String State){
+        idCounter++;
+        this.address= new Address(Street, City, State);
+        this.contact = new Contact(name, phone, email);
+
+    }
+
     // contact class begins
 
-    public class Contact {
+    private static class Contact {
+        //attributes
+
         private String name, phone, email;
+
         // methods
         public String contactDetails(){
             return "Name :"+ this.getName() + "Phone :"+ this.getPhone() + "Email :"+ this.getEmail();
@@ -66,8 +82,10 @@ public class Passenger {
             this.email = email;
         }
     }
-    public class Address {
+    private static class Address {
+        //attributes
         private String Street, City, State;
+
         // methods
         public String getAddressDetails(){
             return "Street :"+ this.getStreet() + "City :"+ this.getCity() + "State :"+ this.getState();
