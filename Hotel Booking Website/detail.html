@@ -3,10 +3,28 @@
        <title>Detail</title>
        <style>
         body {
-            height: 100%;
-            width: 100%;
+               height: 100%;
+               width: 100%;
+               margin: 0px;
+               background-color: #e0e0e0;
 
-        }
+           }
+           header{
+               background-color: rosybrown;
+               
+           }
+           footer{
+               background-color: rosybrown;
+           }
+           .image{
+               margin: 2% 4% 0% 4% ;
+           }
+           .details{
+               margin: 0% 4% 1% 4% ;
+           }
+           .description{
+               margin: 1% 4% 2% 4% ;
+           }
     </style>
     </head>
     <body>
@@ -21,9 +39,9 @@
             <div>
             
             
-                <img height="500px" width="500px" src="https://media-cdn.tripadvisor.com/media/photo-w/17/b3/09/b4/by-the-poolside.jpg"/>
+                <img class="image" height="500px" width="500px" src="https://media-cdn.tripadvisor.com/media/photo-w/17/b3/09/b4/by-the-poolside.jpg"/>
                 <form action="payment.html">
-                    <div>
+                    <div class ="details">
                         <div><label>Adults: </label><input type="number" min="1" required></div>
                         <div><label>Name: </label><input type="text" required></div>
                         <div><label>From Date: </label><input type="date" required></div>
@@ -34,7 +52,7 @@
                     
                 </form>
                 
-                <div>
+                <div class="description">
                    
                        <h3>Radison Blu Hotel</h3> 
                        <div>RATING</div>
