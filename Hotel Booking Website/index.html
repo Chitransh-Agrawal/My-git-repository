@@ -1,26 +1,119 @@
 <html>
     <head>
        <title>Index</title>
+       <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
        <style>
+           
            body {
                height: 100%;
                width: 100%;
                margin: 0px;
                background-color: #e0e0e0;
+               font-family: 'Ubuntu', sans-serif;
 
            }
            header{
                background-color: rosybrown;
+               position:sticky;
+                display: block;
+               top:0px;
+               
+               
+               width: 100vw;
+               height: 10vh;
+               z-index: 1;
+               
                
            }
+           #logo{
+               position:relative;
+                float: left;
+                
+               
+
+           }
+           #login{
+              position: relative;
+              text-decoration: none;
+              color: black;
+            float:right;
+            top:3vh;
+            right: 3vw;
+            font-weight: bold;
+
+           }
+           section{
+               position:absolute;
+              height: 100vh;
+              width: 100vw;
+           }
+
+           #more{
+            text-decoration: none;
+              color: black;
+              position: relative;
+              left:45vw;
+           }
+
            footer{
                background-color: rosybrown;
+               position:fixed;
+               
+               width: 100vw;
+               
+               top: 90vh;
+               height: 15vh;
+               z-index: 1;
            }
-           #search{
+           #contact{
+            text-decoration: none;
+              color: black;
+              height: 100%;
+              position: relative;
+              top: 2vh;
+              left:0.5vw;
+              float: left;
+              z-index: 1;
+           }
+           #copyright{
+               position: relative;
+              
+              top:4vh;
+              left:35vw;
+              
+           }
+           .social{
+            position: relative;
+            top:2vh;
+            right: 3vw;
+            float:right;
+            padding: 0.5%;
+           }
+           
+
+
+           #search-image{
                background-image: url('https://media-cdn.tripadvisor.com/media/photo-o/14/10/2e/af/india.jpg');
                height: 380px;
                background-repeat: no-repeat;
                background-position: center;
+               width: 100vw;
+               
+           }
+
+           
+           
+           #field{
+               width: 20vw;
+               position: relative;
+               border:1px solid transparent;
+                border-radius: 12px;
+                background-color: #f1f1f1;
+               
+               padding: 10px;
+               font-size: 16px;
+               top:30vh;
+               left:40vw;
            }
            #images{
                
@@ -50,15 +143,20 @@
     <body>
         <header>
             <div>
-                <a href="index.html"><img height="60px" width="60px" src="assests/images/logo.png"/></a>
-                <a href="login.html" target="_blank">Login</a>
+                
+
+                <a id="logo" href="index.html"><img height="60px" width="60px" src="assests/images/logo.png"/></a>
+                
+            </div>
+            <div>
+                <a id="login" href="login.html" target="_blank">Login</a>
             </div>
 
         </header>
 
         <section>
             <div>
-                <div id="search"><input  placeholder="city" type="text"></div>
+                <div id="search-image"><div id="input"><input id="field"   placeholder="city" type="text"></div></div>
                 <div id="images">
                     <a  href="list.html"><img class="pics"  height="150px" width="150px" src="https://media-cdn.tripadvisor.com/media/photo-s/15/33/fe/a2/new-delhi.jpg"/></a>
                 <a   href="list.html"><img class="pics" height="150px" width="150px" src="https://media-cdn.tripadvisor.com/media/photo-s/15/33/fc/f0/goa.jpg"/></a>
@@ -67,30 +165,30 @@
 
                 </div>
                 
-                <div><a href="index.html">View More>></a></div>
+                <div><a id="more" href="index.html">View More>></a></div>
                 
             </div>
         </section>
 
         <footer>
-            <div>
-                <a href="contact.html" target="_blank">Contact Us</a>
+            <div  >
+                <a  id="contact" href="contact.html" target="_blank">Contact Us</a>
             </div>
-            <a href="https://www.facebook.com" target="_blank"><img height="20px" width="22px" src="assests/images/facebook.png"/></a>
-            <a href="https://www.instagram.com/" target="_blank"><img height="20px" width="22px" src="assests/images/instagram.png"/></a>
-            <a href="https://www.twitter.com/" target="_blank"><img height="20px" width="22px" src="assests/images/twitter.png"/></a>
-            <div>© 2020 ROOM SEARCH PVT. LTD.</div>
+            <div class="social"><a href="https://www.facebook.com" target="_blank"><img height="20px" width="22px" src="assests/images/facebook.png"/></a></div>
+            <div class="social"><a href="https://www.instagram.com/" target="_blank"><img height="20px" width="22px" src="assests/images/instagram.png"/></a></div>
+            <div class="social"><a href="https://www.twitter.com/" target="_blank"><img height="20px" width="22px" src="assests/images/twitter.png"/></a></div>
+            <div id="copyright">© 2020 ROOM SEARCH PVT. LTD.</div>
+            
+            
+            
+            
+            
 
 
         </footer>
        
        
-        <div>
-            
-            
-               
-
-        </div>
+        
 
     </body>
 </html>

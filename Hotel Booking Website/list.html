@@ -1,106 +1,212 @@
 <html>
     <head>
        <title>List</title>
+       <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
        <style>
-        body {
+            body {
                height: 100%;
                width: 100%;
                margin: 0px;
                background-color: #e0e0e0;
+               font-family: 'Ubuntu', sans-serif;
 
            }
            header{
                background-color: rosybrown;
+               position:sticky;
+                display: block;
+               top:0px;
                
+               
+               width: 100vw;
+               height: 10vh;
+               z-index: 1;
+               
+               
+           }
+           #logo{
+               position:relative;
+                float: left;
+                
+               
+
+           }
+           #login{
+              position: relative;
+              text-decoration: none;
+              color: black;
+            float:right;
+            top:3vh;
+            right: 3vw;
+            font-weight: bold;
            }
            footer{
                background-color: rosybrown;
+               position:fixed;
+               
+               width: 100vw;
+               
+               top: 90vh;
+               height: 15vh;
+               z-index: 1;
            }
-           .description{
-               margin: 2%;
-               background-color: rgb(132, 136, 139);
-               width: 40%;
+           #contact{
+            text-decoration: none;
+              color: black;
+              height: 100%;
+              position: relative;
+              top: 2vh;
+              left:0.5vw;
+              float: left;
+              z-index: 1;
+           }
+           #copyright{
+               position: relative;
+              
+              top:4vh;
+              left:35vw;
+              
+           }
+           .social{
+            position: relative;
+            top:2vh;
+            right: 3vw;
+            float:right;
+            padding: 0.5%;
+           }
 
+           #content{
+               display: flex;
+               flex-wrap: wrap;
+               justify-content: flex-start;
+               
+               width: 100vw;
+               
+           }
+
+           .description{
+              
+               margin: 3%;
+               background-color: rgb(132, 136, 139);
+               width: 40vw;
+               
+               height: 55vh;
+                
+           }
+           
+
+           li{
+               height: 1vh;
+            display: inline-block;
+            position: relative;
+            list-style: none;
+            padding-inline: 3%;
+            left: 35vw;
+            
+           }
+           a{
+            text-decoration: none; font-weight: bold; color:black;
+           }
+
+           
+           
+
+           #map{
+               display:none;
            }
     </style>
     </head>
     <body>
         <header>
             <div>
-                <a href="index.html"><img height="60px" width="60px" src="assests/images/logo.png"/></a>
-                <a href="login.html" target="_blank">Login</a>
+                
+
+                <a id="logo" href="index.html"><img height="60px" width="60px" src="assests/images/logo.png"/></a>
+                
             </div>
+            <div>
+                <a id="login" href="login.html" target="_blank">Login</a>
+            </div>
+
         </header>
 
         <section>
-            <div>
-                <ul>
-                    <li><a href="#image">List View</a></li>
+            
+                <ul >
+                    <li><a  href="#image">List View</a></li>
                     <li><a href="#map">Map View</a></li>
                 </ul>
-                <div class="description">
-                <img id="image"  height="200px" width="250px" src="https://media-cdn.tripadvisor.com/media/photo-w/17/b3/09/b4/by-the-poolside.jpg"/>
-                
-                <div>
-                    <a href="detail.html" >
-                        <h3>Radison Blu Hotel</h3> 
-                         <div>5.0 star</div>
-                     <div>New Delhi</div>
-     
-                     </a>
 
+                <div id=content>
+                    <div class="description">
+                        <img id="image"  height="200px" width="250px" src="https://media-cdn.tripadvisor.com/media/photo-w/17/b3/09/b4/by-the-poolside.jpg"/>
+                        
+                        <div>
+                            <a href="detail.html" >
+                                <h3>Radison Blu Hotel</h3> 
+                            </a>
+                                 <div>5.0 star</div>
+                                 <br>
+                             <div>New Delhi</div>
+             
+                             
+        
+                        </div>
+                           
+        
+                        </div>
+        
+                        <div class="description">
+                        <img  height="200px" width="250px" src="https://media-cdn.tripadvisor.com/media/photo-w/15/06/31/5f/facade.jpg"/>
+                        
+                        <div>
+                            <a href="detail.html" >
+                                <h3>The Lalit</h3> 
+                            </a>
+                                 <div>4.5 star</div>
+                                 <br>
+                             <div>New Delhi</div>
+             
+                             
+        
+                        </div>
+                            
+                        </div>
+                        <div class="description">
+                        <img  height="200px" width="250px" src="https://media-cdn.tripadvisor.com/media/photo-w/1b/4e/9b/11/exterior.jpg"/>
+                        <div>
+                            <div>
+                                <a href="detail.html" >
+                                    <h3>Taj Palace</h3> 
+                                </a>
+                                     <div>4.0 star</div>
+                                     <br>
+                                 <div>New Delhi</div>
+                 
+                                 
+        
+                            </div>
+                            
+                        </div>
+                        </div>
                 </div>
-                   
-
-                </div>
-
-                <div class="description">
-                <img  height="200px" width="250px" src="https://media-cdn.tripadvisor.com/media/photo-w/15/06/31/5f/facade.jpg"/>
-                
-                <div>
-                    <a href="detail.html" >
-                        <h3>The Lalit</h3> 
-                         <div>4.5 star</div>
-                     <div>New Delhi</div>
-     
-                     </a>
-
-                </div>
-                    
-                </div>
-                <div class="description">
-                <img  height="200px" width="250px" src="https://media-cdn.tripadvisor.com/media/photo-w/1b/4e/9b/11/exterior.jpg"/>
-                <div>
-                    <div>
-                        <a href="detail.html" >
-                            <h3>Taj Palace</h3> 
-                             <div>4.0 star</div>
-                         <div>New Delhi</div>
-         
-                         </a>
-
-                    </div>
-                    
-                </div>
-                </div>
+               
                 <img id="map" height="400px" width="700px" src="https://cdn.pixabay.com/photo/2018/01/31/05/43/web-3120321_960_720.png"/>
                 <div>MAP VIEW</div>
                 
-            </div>
+            
             
         </section>
 
         <footer>
-        <div>
-            <div>
-                <a href="contact.html" target="_blank">Contact Us</a>
+            <div  >
+                <a  id="contact" href="contact.html" target="_blank">Contact Us</a>
             </div>
-            <a href="https://www.facebook.com" target="_blank"><img height="20px" width="22px" src="assests/images/facebook.png"/></a>
-            <a href="https://www.instagram.com/" target="_blank"><img height="20px" width="22px" src="assests/images/instagram.png"/></a>
-            <a href="https://www.twitter.com/" target="_blank"><img height="20px" width="22px" src="assests/images/twitter.png"/></a>
-            <div>© 2020 ROOM SEARCH PVT. LTD.</div>
-
-        </div>
+            <div class="social"><a href="https://www.facebook.com" target="_blank"><img height="20px" width="22px" src="assests/images/facebook.png"/></a></div>
+            <div class="social"><a href="https://www.instagram.com/" target="_blank"><img height="20px" width="22px" src="assests/images/instagram.png"/></a></div>
+            <div class="social"><a href="https://www.twitter.com/" target="_blank"><img height="20px" width="22px" src="assests/images/twitter.png"/></a></div>
+            <div id="copyright">© 2020 ROOM SEARCH PVT. LTD.</div>
+            
         </footer>
         
         
