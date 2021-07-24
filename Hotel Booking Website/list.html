@@ -13,10 +13,12 @@
            }
            header{
                background-color: rosybrown;
-               position:sticky;
-                display: block;
-               top:0px;
+               position:fixed;
+                display: flex;
+                
+               justify-content: space-between;
                
+               align-items: center;
                
                width: 100vw;
                height: 10vh;
@@ -25,56 +27,57 @@
                
            }
            #logo{
-               position:relative;
-                float: left;
+               margin-left: 0.5vw;
+             
                 
-               
-
            }
+
            #login{
-              position: relative;
+             
+               margin-right:3vw;
               text-decoration: none;
               color: black;
-            float:right;
-            top:3vh;
-            right: 3vw;
+            
             font-weight: bold;
+
            }
            footer{
-               background-color: rosybrown;
+            background-color: rosybrown;
                position:fixed;
+                display: flex;
+                
+               justify-content: space-between;
                
+               align-items: center;
+               bottom:0px;
                width: 100vw;
-               
-               top: 90vh;
-               height: 15vh;
+               height: 10vh;
                z-index: 1;
            }
-           #contact{
+           a{
             text-decoration: none;
               color: black;
-              height: 100%;
-              position: relative;
-              top: 2vh;
-              left:0.5vw;
-              float: left;
-              z-index: 1;
-           }
-           #copyright{
-               position: relative;
               
-              top:4vh;
-              left:35vw;
+              padding: 3%;
+              
+              
               
            }
+           #contact{
+               width: 8vw;
+            margin-left:2%;
+           }
+           
            .social{
-            position: relative;
-            top:2vh;
-            right: 3vw;
-            float:right;
-            padding: 0.5%;
+               width:8vw;
+            margin-right:2%;
            }
 
+           section{
+               display: flex;
+               flex-direction: column;
+               justify-content: center;
+           }
            #content{
                display: flex;
                flex-wrap: wrap;
@@ -85,23 +88,36 @@
            }
 
            .description{
+               display:flex;
+               justify-content: flex-start;
               
                margin: 3%;
-               background-color: rgb(132, 136, 139);
+               background-color: lightgrey;
                width: 40vw;
                
-               height: 55vh;
+               height: fit-content;
                 
            }
+           .image{
+               margin-right: 5%;
+           }
            
+           .list{
+              
+               margin-top: 5%;
+               display:flex;
+               flex-direction: row;
+               justify-content: center;
+               align-content: center;
+               
+               
+           }
 
            li{
-               height: 1vh;
-            display: inline-block;
-            position: relative;
+               width: 10%;
+                   
             list-style: none;
-            padding-inline: 3%;
-            left: 35vw;
+            
             
            }
            a{
@@ -132,14 +148,17 @@
 
         <section>
             
-                <ul >
+            <div >
+                <ul class="list" >
                     <li><a  href="#image">List View</a></li>
                     <li><a href="#map">Map View</a></li>
                 </ul>
+            </div>
+                
 
                 <div id=content>
                     <div class="description">
-                        <img id="image"  height="200px" width="250px" src="https://media-cdn.tripadvisor.com/media/photo-w/17/b3/09/b4/by-the-poolside.jpg"/>
+                        <img id="image" class="image" height="200px" width="250px" src="https://media-cdn.tripadvisor.com/media/photo-w/17/b3/09/b4/by-the-poolside.jpg"/>
                         
                         <div>
                             <a href="detail.html" >
@@ -157,7 +176,7 @@
                         </div>
         
                         <div class="description">
-                        <img  height="200px" width="250px" src="https://media-cdn.tripadvisor.com/media/photo-w/15/06/31/5f/facade.jpg"/>
+                        <img class="image" height="200px" width="250px" src="https://media-cdn.tripadvisor.com/media/photo-w/15/06/31/5f/facade.jpg"/>
                         
                         <div>
                             <a href="detail.html" >
@@ -173,7 +192,7 @@
                             
                         </div>
                         <div class="description">
-                        <img  height="200px" width="250px" src="https://media-cdn.tripadvisor.com/media/photo-w/1b/4e/9b/11/exterior.jpg"/>
+                        <img class="image" height="200px" width="250px" src="https://media-cdn.tripadvisor.com/media/photo-w/1b/4e/9b/11/exterior.jpg"/>
                         <div>
                             <div>
                                 <a href="detail.html" >
@@ -199,13 +218,16 @@
         </section>
 
         <footer>
-            <div  >
-                <a  id="contact" href="contact.html" target="_blank">Contact Us</a>
+            <div id="contact" >
+                <a   href="contact.html" target="_blank">Contact Us</a>
             </div>
-            <div class="social"><a href="https://www.facebook.com" target="_blank"><img height="20px" width="22px" src="assests/images/facebook.png"/></a></div>
-            <div class="social"><a href="https://www.instagram.com/" target="_blank"><img height="20px" width="22px" src="assests/images/instagram.png"/></a></div>
-            <div class="social"><a href="https://www.twitter.com/" target="_blank"><img height="20px" width="22px" src="assests/images/twitter.png"/></a></div>
             <div id="copyright">© 2020 ROOM SEARCH PVT. LTD.</div>
+            <div class="social">
+                <a href="https://www.facebook.com" target="_blank"><img height="20px" width="22px" src="assests/images/facebook.png"/></a>
+                <a href="https://www.instagram.com/" target="_blank"><img height="20px" width="22px" src="assests/images/instagram.png"/></a>
+                <a href="https://www.twitter.com/" target="_blank"><img height="20px" width="22px" src="assests/images/twitter.png"/></a>
+                
+            </div>
             
         </footer>
         

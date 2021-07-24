@@ -14,10 +14,12 @@
            }
            header{
                background-color: rosybrown;
-               position:sticky;
-                display: block;
-               top:0px;
+               position:fixed;
+                display: flex;
+                
+               justify-content: space-between;
                
+               align-items: center;
                
                width: 100vw;
                height: 10vh;
@@ -26,58 +28,106 @@
                
            }
            #logo{
-               position:relative;
-                float: left;
+               margin-left: 0.5vw;
+             
                 
-               
-
            }
+
            #login{
-              position: relative;
+             
+               margin-right:3vw;
               text-decoration: none;
               color: black;
-            float:right;
-            top:3vh;
-            right: 3vw;
+            
             font-weight: bold;
+
            }
+
            footer{
-               background-color: rosybrown;
+            background-color: rosybrown;
                position:fixed;
+                display: flex;
+                
+               justify-content: space-between;
                
+               align-items: center;
+               bottom:0px;
                width: 100vw;
-               
-               top: 90vh;
-               height: 15vh;
+               height: 10vh;
                z-index: 1;
            }
-           #contact{
+           a{
             text-decoration: none;
               color: black;
-              height: 100%;
-              position: relative;
-              top: 2vh;
-              left:0.5vw;
-              float: left;
-              z-index: 1;
-           }
-           #copyright{
-               position: relative;
               
-              top:4vh;
-              left:35vw;
+              padding: 3%;
+              
+              
               
            }
+           #contact{
+               width: 8vw;
+            margin-left:2%;
+           }
+           
            .social{
-            position: relative;
-            top:2vh;
-            right: 3vw;
-            float:right;
-            padding: 0.5%;
+               width:8vw;
+            margin-right:2%;
            }
-           .image{
-               margin: 2% 4% 0% 4% ;
+
+           section{
+               display: flex;
+               flex-direction: column;
+               justify-content: center;
+               align-content: space-between;
            }
+           .box-div{
+               display:flex;
+               flex-direction: row;
+               margin: 7% 7% 3% 4%;
+               justify-content: center;
+               align-items: center;
+               max-height: 400px;
+               height: 60vh;
+               
+                width: 90vw;
+                border: 1px solid black;
+
+           }
+           .image-div{
+            width: 40vw;
+           height:60vh;
+               border-right: 1px solid black;
+               padding: 1% 10% 1% 0%;
+               max-height: 350px;
+
+           }
+           .form-div{
+               display: flex;
+               flex-direction: column;
+               align-content: center;
+               justify-content: space-around;
+            
+             height: 60vh;
+               padding: 5% 0% 1% 10%;
+               
+               width: 30vw;
+              }
+
+              .input{
+                  display:flex;
+                  flex-direction: row;
+                  justify-content: space-around;
+                  
+                  
+              }
+
+              .heading{
+                  font-weight: bold;
+                  font-family: cursive;
+                  
+              }
+           
            .details{
                margin: 0% 4% 1% 4% ;
            }
@@ -100,29 +150,39 @@
         </header>
 
         <section>
-            <div>
             
             
-                <img class="image" height="500px" width="500px" src="https://media-cdn.tripadvisor.com/media/photo-w/17/b3/09/b4/by-the-poolside.jpg"/>
-                <form action="payment.html">
-                    <div class ="details">
-                        <div><label>Adults: </label><input type="number" min="1" required></div>
-                        <div><label>Name: </label><input type="text" required></div>
-                        <div><label>From Date: </label><input type="date" required></div>
-                        <div><label>To Date: </label><input type="date" required></div>
-                        <div><label>Total: </label><input type="number" disabled></div>
-                        <button>Book Now</button>
-                    </div>
+            <div class="box-div">
+                
+                    <img class="image-div" src="https://media-cdn.tripadvisor.com/media/photo-w/17/b3/09/b4/by-the-poolside.jpg"/>
+                
+
+             
+                <form  action="payment.html">
+                    <div class="form-div" >
+                        <div class="input"><label>Adults: </label><input width="30vw" type="number" min="1" required></div>
+                        <div class="input"><label>Name: </label><input width="30vw" type="text" required></div>
+                        <div class="input"><label>From Date: </label><input width="80vw" type="date" required></div>
+                        <div class="input"><label>To Date: </label><input width="30vw" type="date" required></div>
+                        <div class="input"><label>Total: </label><input width="30vw" type="number" disabled></div>
+                        <div class="input"><button style="padding:4%;"width="50px">Book Now</button></div>
                     
+                    </div>
                 </form>
+
+             
+
+            </div>
+               
+                
                 
                 <div class="description">
                    
                        <h3>Radison Blu Hotel</h3> 
-                       <div>RATING</div>
+                       <div class="heading">RATING</div>
                         <div>5.0 star</div>
                 </br>
-                    <div>AMENITIES</div>
+                    <div class="heading">AMENITIES</div>
                     <ul>
                         <li>Room Service</li>
                         <li>Resturant</li>
@@ -130,23 +190,29 @@
                         <li>Fitness Center</li>
                         <li>Pool</li>
                     </ul>
-                    <h5>DESCRIPTION</h5>
+                    <h3 class="heading">DESCRIPTION</h3>
                 
                 <p>This is a luxury class hotel, located at heart of city. We offer services such as airport pickup
                     at no extra cost.
     
                 </p>    
+                <br>
+                <br>
+                <br>
                 </div>
         </section>
 
         <footer>
-            <div  >
-                <a  id="contact" href="contact.html" target="_blank">Contact Us</a>
+            <div id="contact" >
+                <a   href="contact.html" target="_blank">Contact Us</a>
             </div>
-            <div class="social"><a href="https://www.facebook.com" target="_blank"><img height="20px" width="22px" src="assests/images/facebook.png"/></a></div>
-            <div class="social"><a href="https://www.instagram.com/" target="_blank"><img height="20px" width="22px" src="assests/images/instagram.png"/></a></div>
-            <div class="social"><a href="https://www.twitter.com/" target="_blank"><img height="20px" width="22px" src="assests/images/twitter.png"/></a></div>
             <div id="copyright">© 2020 ROOM SEARCH PVT. LTD.</div>
+            <div class="social">
+                <a href="https://www.facebook.com" target="_blank"><img height="20px" width="22px" src="assests/images/facebook.png"/></a>
+                <a href="https://www.instagram.com/" target="_blank"><img height="20px" width="22px" src="assests/images/instagram.png"/></a>
+                <a href="https://www.twitter.com/" target="_blank"><img height="20px" width="22px" src="assests/images/twitter.png"/></a>
+                
+            </div>
 
         </footer>
         

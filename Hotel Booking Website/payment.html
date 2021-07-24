@@ -21,10 +21,12 @@
            }
            header{
                background-color: rosybrown;
-               position:sticky;
-                display: block;
-               top:0px;
+               position:fixed;
+                display: flex;
+                
+               justify-content: space-between;
                
+               align-items: center;
                
                width: 100vw;
                height: 10vh;
@@ -33,30 +35,51 @@
                
            }
            #logo{
-               position:relative;
-                float: left;
+               margin-left: 0.5vw;
+             
                 
-               
-
            }
+
            #login{
-              position: relative;
+             
+               margin-right:3vw;
               text-decoration: none;
               color: black;
-            float:right;
-            top:3vh;
-            right: 3vw;
+            
             font-weight: bold;
+
            }
            footer{
-               background-color: rosybrown;
+            background-color: rosybrown;
                position:fixed;
+                display: flex;
+                
+               justify-content: space-between;
                
+               align-items: center;
+               bottom:0px;
                width: 100vw;
-               
-               top: 90vh;
-               height: 15vh;
+               height: 10vh;
                z-index: 1;
+           }
+           a{
+            text-decoration: none;
+              color: black;
+              
+              padding: 3%;
+              
+              
+              
+           }
+           #contact{
+               width: 8vw;
+            margin-left:2%;
+           }
+           
+           .social{
+               width:8vw;
+            margin-right:2%;
+            
            }
            #contact{
             text-decoration: none;
@@ -82,20 +105,79 @@
             float:right;
             padding: 0.5%;
            }
+
+           section{
+               
+               display: flex;
+               flex-direction: column;
+               justify-content: center;
+               align-content: center;
+           }
+
            .image{
-               width:50%;
+               border: 1px solid black;
+           
+               display: flex;
+               flex-direction: row;
+               justify-content: space-between;
+               align-items: center;
+               width:50vw;
+               height: 30vh;
                background-color: rgb(132, 136, 139);
-               margin: 2% auto 2% auto;
+               margin: 20vh 0 5vh 25vw;
+               
+           }
+           .image-details{
+              
+               width:50vw;
+               height: 20vh;
+            display: flex;
+               flex-direction: column;
+               justify-content: space-around;
+               align-items: flex-start;
+               margin-left: 2vw;
+               
+           }
+
+           .payment-div{
+               display:flex;
+               flex-direction: row;
+               justify-content: space-evenly;
+               border:1px solid black;
+               background-color: rosybrown;
+               border-radius: 5px;
+               height: 30vh;
+               width: 80vw;
+               margin: 0 0 10vh 10vw;
            }
            .customer{
+               font-family: cursive;
+               display: flex;
+               flex-direction: column;
+               justify-content: space-evenly;
                margin: 2%;
+               height: 20vh;
+               
            }
            .tarrif{
-               bottom:100px;
+            font-family: cursive;
+            display: flex;
+               flex-direction: column;
+               justify-content: space-evenly;
+               
                margin:2%;
-               border: 1px solid black;
+               
                border-radius: 5px;
                padding: 1% 2% 1% 2%;
+           }
+           #pay{
+            
+               display: flex;
+               flex-direction: column;
+               justify-content: space-evenly;
+           }
+           label{
+               font-weight: bold;
            }
     </style>
     </head>
@@ -113,36 +195,46 @@
     </header>
 
         <section>
-            <div>
+            
             
                  <div class="image">
-                    <img height="500px" width="500px" src="https://media-cdn.tripadvisor.com/media/photo-w/17/b3/09/b4/by-the-poolside.jpg"/>
-                    <h3>Radison Blu Hotel</h3> 
+                    <img height="100%" width="40%" src="https://media-cdn.tripadvisor.com/media/photo-w/17/b3/09/b4/by-the-poolside.jpg"/>
+                   <div class="image-details">
+                    <div><h3>Radison Blu Hotel</h3> </div> 
                     <div>#38 of 1,289 hotels in New Delhi</div>
                      <div>National Highways 8, New Delhi 1100017, India</div>
+
+                   </div> 
                  </div>
                 
                 
-                <div class="customer">
+                <div class="payment-div">
+                    <div class="customer">
                    
                      
-                        <div><h5>Name: John Doe</h5></div>
-                        <div><h5>No of adults: 2</h5></div>
-                        <div><h5>Check-in Date: 16-07-21</h5></div>
-                        <div><h5>Check-out Date: 22-07-21</h5></div>
+                        <div><label>Name: </label>John Doe</div>
+                        <div><label>No of adults: </label>2</div>
+                        <div><label>Check-in Date: </label>16-07-21</div>
+                        <div><label>Check-out Date: </label>22-07-21</div>
                      </div> 
                         
                     
                      <div class="tarrif">
-                        <div><h5>Tarrif Breakdown: Rs 1000 x 2 Adults x 6 Nights</h5></div>
-                        <div><h5>Total Amount: Rs 12000</h5></div>
+                        <div><label>Tarrif Breakdown: </label>Rs 1000 x 2 Adults x 6 Nights</div>
+                        <div><label>Total Amount: </label>Rs 12000</div>
 
                         
                      </div>
                         
-                     <div id="pay">
-                        <a  href="" target="_blank">Pay Now</a>
-                     </div>
+                     
+                        <a id="pay" href="" target="_blank">Pay Now</a>
+                     
+
+                </div>
+
+                
+                    <br>
+                    <br>
                     <br>
                     <br>
                     <br>
@@ -151,18 +243,21 @@
                     
                     
                
-            </div>    
+                
 
         </section>
 
         <footer>
-            <div  >
-                <a  id="contact" href="contact.html" target="_blank">Contact Us</a>
+            <div id="contact" >
+                <a   href="contact.html" target="_blank">Contact Us</a>
             </div>
-            <div class="social"><a href="https://www.facebook.com" target="_blank"><img height="20px" width="22px" src="assests/images/facebook.png"/></a></div>
-            <div class="social"><a href="https://www.instagram.com/" target="_blank"><img height="20px" width="22px" src="assests/images/instagram.png"/></a></div>
-            <div class="social"><a href="https://www.twitter.com/" target="_blank"><img height="20px" width="22px" src="assests/images/twitter.png"/></a></div>
             <div id="copyright">© 2020 ROOM SEARCH PVT. LTD.</div>
+            <div class="social">
+                <a href="https://www.facebook.com" target="_blank"><img height="20px" width="22px" src="assests/images/facebook.png"/></a>
+                <a href="https://www.instagram.com/" target="_blank"><img height="20px" width="22px" src="assests/images/instagram.png"/></a>
+                <a href="https://www.twitter.com/" target="_blank"><img height="20px" width="22px" src="assests/images/twitter.png"/></a>
+                
+            </div>
     </footer>
         
         
