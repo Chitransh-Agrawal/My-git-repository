@@ -2,7 +2,20 @@
     <head>
        <title>List</title>
        <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
        <style>
+           .modal-footer{
+               display:flex;
+               flex-direction: row;
+               justify-content: center;
+           }
+           .form-group{
+            display:flex;
+               flex-direction: row;
+               justify-content: space-around;
+           }
             body {
                height: 100%;
                width: 100%;
@@ -54,18 +67,16 @@
                height: 10vh;
                z-index: 1;
            }
-           a{
-            text-decoration: none;
-              color: black;
-              
-              padding: 3%;
-              
-              
-              
-           }
+          
            #contact{
-               width: 8vw;
-            margin-left:2%;
+            width: 9vw;
+
+height: 6vh;
+display:flex;
+flex-direction: column;
+justify-content: center;
+align-content: center;
+margin-left:2vw;
            }
            
            .social{
@@ -81,28 +92,47 @@
            #content{
                display: flex;
                flex-wrap: wrap;
+               flex-direction: row;
                justify-content: flex-start;
-               
+            margin-left:5%;
                width: 100vw;
                
            }
 
            .description{
                display:flex;
-               justify-content: flex-start;
+               justify-content: space-between;
+               flex-direction: row;
               
                margin: 3%;
                background-color: lightgrey;
                width: 40vw;
+               height: 30vh;
                
-               height: fit-content;
+               
                 
            }
+           .description-text{
+               display:flex;
+               flex-direction: column;
+               justify-content: flex-start;
+               align-content: center;
+               
+               height: 30vh;
+               width: 50vw;
+               padding:3% 4%;
+           }
+           .description:hover{
+               background-color: rosybrown;
+               text-decoration: none;
+               color:black;
+           }
            .image{
-               margin-right: 5%;
+               height: 30vh;
+               width: 40vw;
            }
            
-           .list{
+           #nav-list{
               
                margin-top: 5%;
                display:flex;
@@ -128,20 +158,63 @@
            
 
            #map{
-               display:none;
+               
            }
     </style>
     </head>
     <body>
         <header>
             <div>
-                
+
 
                 <a id="logo" href="index.html"><img height="60px" width="60px" src="assests/images/logo.png"/></a>
-                
+
             </div>
             <div>
-                <a id="login" href="login.html" target="_blank">Login</a>
+                <button id="login" type="button" class="btn btn-light" data-toggle="modal" data-target="#login-modal">LOGIN</button>
+
+                <!-- Button trigger modal -->
+
+
+  <!-- Modal -->
+  <div class="modal" tabindex="-1" role="dialog" id="login-modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Please Login</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form>
+        <div class="modal-body">
+          <!-- <p>Modal body text goes here.</p> -->
+          
+            <div class="form-group">
+              <label for="exampleInputEmail1">Username:</label>
+              <input type="email"  id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
+              <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password:</label><input type="password"  id="exampleInputPassword1" placeholder="Password">
+              
+            </div>
+            <!-- <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div> -->
+            <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+            <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                <button type="submit" class="btn btn-primary">Login</button>
+              </div>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
             </div>
 
         </header>
@@ -149,84 +222,143 @@
         <section>
             
             <div >
-                <ul class="list" >
+
+               
+
+                <ul class="nav nav-pills mb-3" id="nav-list" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">List View</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Map View</a>
+                    </li>
+                   
+                  </ul>
+                  <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                        <div id=content>
+                            <a href="detail.html"class="description" >
+                                <img id="image" class="image"  src="https://media-cdn.tripadvisor.com/media/photo-w/17/b3/09/b4/by-the-poolside.jpg"/>
+                                
+                                <div class="description-text">
+                                    
+                                        <h3>Radison Blu Hotel</h3> 
+                                    
+                                         <div>5.0 star</div>
+                                         <br>
+                                     <div>New Delhi</div>
+                     
+                                     
+                
+                                </div>
+                                   
+                </a>
+                
+                                <a href="detail.html" class="description" > 
+                                <img class="image"  src="https://media-cdn.tripadvisor.com/media/photo-w/15/06/31/5f/facade.jpg"/>
+                                
+                                <div class="description-text">
+                                    
+                                        <h3>The Lalit</h3> 
+                                   
+                                         <div>4.5 star</div>
+                                         <br>
+                                     <div>New Delhi</div>
+                     
+                                     
+                
+                                </div>
+                                    
+                                 </a>
+
+                                <a href="detail.html" class="description" >
+                                <img class="image"  src="https://media-cdn.tripadvisor.com/media/photo-w/1b/4e/9b/11/exterior.jpg"/>
+                                
+                                    <div class="description-text">
+                                        
+                                            <h3>Taj Palace</h3> 
+                                        
+                                             <div>4.0 star</div>
+                                             <br>
+                                         <div>New Delhi</div>
+                         
+                                         
+                
+                                    </div>
+                                    
+                                
+                                </a>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <img id="map" height="400px" width="700px" src="https://cdn.pixabay.com/photo/2018/01/31/05/43/web-3120321_960_720.png"/>
+                
+                    </div>
+                    
+                  </div>
+
+                <!-- <ul class="list" >
                     <li><a  href="#image">List View</a></li>
                     <li><a href="#map">Map View</a></li>
-                </ul>
+                </ul> -->
             </div>
                 
 
-                <div id=content>
-                    <div class="description">
-                        <img id="image" class="image" height="200px" width="250px" src="https://media-cdn.tripadvisor.com/media/photo-w/17/b3/09/b4/by-the-poolside.jpg"/>
-                        
-                        <div>
-                            <a href="detail.html" >
-                                <h3>Radison Blu Hotel</h3> 
-                            </a>
-                                 <div>5.0 star</div>
-                                 <br>
-                             <div>New Delhi</div>
-             
-                             
-        
-                        </div>
-                           
-        
-                        </div>
-        
-                        <div class="description">
-                        <img class="image" height="200px" width="250px" src="https://media-cdn.tripadvisor.com/media/photo-w/15/06/31/5f/facade.jpg"/>
-                        
-                        <div>
-                            <a href="detail.html" >
-                                <h3>The Lalit</h3> 
-                            </a>
-                                 <div>4.5 star</div>
-                                 <br>
-                             <div>New Delhi</div>
-             
-                             
-        
-                        </div>
-                            
-                        </div>
-                        <div class="description">
-                        <img class="image" height="200px" width="250px" src="https://media-cdn.tripadvisor.com/media/photo-w/1b/4e/9b/11/exterior.jpg"/>
-                        <div>
-                            <div>
-                                <a href="detail.html" >
-                                    <h3>Taj Palace</h3> 
-                                </a>
-                                     <div>4.0 star</div>
-                                     <br>
-                                 <div>New Delhi</div>
-                 
-                                 
-        
-                            </div>
-                            
-                        </div>
-                        </div>
-                </div>
+                
                
-                <img id="map" height="400px" width="700px" src="https://cdn.pixabay.com/photo/2018/01/31/05/43/web-3120321_960_720.png"/>
-                <div>MAP VIEW</div>
+                <div>
+
+                </div>
+                
                 
             
             
         </section>
 
         <footer>
-            <div id="contact" >
-                <a   href="contact.html" target="_blank">Contact Us</a>
-            </div>
+            <button id="contact" type="button" class="btn btn-info" data-toggle="modal" data-target="#contact-modal">Contact Us</button>
+            <div class="modal" tabindex="-1" role="dialog" id="contact-modal" >
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Get In Touch</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <form>
+                        <div class="form-group">
+                         
+                        </div>
+                        <div class="modal-body">
+                            <div>Thank you for reaching out!!!</div>
+                             
+                             <div>Please enter your email and we will get back to you.</div>
+                            </br>
+                            <label for="exampleInputEmail2">Email: </label>
+                            <input type="email"  id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter email">
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                     
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                        
+                       
+                        
+                      </form>
+                   
+                  </div>
+                </div>
+              </div>
+
+
             <div id="copyright">© 2020 ROOM SEARCH PVT. LTD.</div>
             <div class="social">
                 <a href="https://www.facebook.com" target="_blank"><img height="20px" width="22px" src="assests/images/facebook.png"/></a>
                 <a href="https://www.instagram.com/" target="_blank"><img height="20px" width="22px" src="assests/images/instagram.png"/></a>
                 <a href="https://www.twitter.com/" target="_blank"><img height="20px" width="22px" src="assests/images/twitter.png"/></a>
-                
+
             </div>
             
         </footer>

@@ -2,7 +2,20 @@
     <head>
        <title>Payment</title>
        <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
        <style>
+           .modal-footer{
+               display:flex;
+               flex-direction: row;
+               justify-content: center;
+           }
+           .form-group{
+            display:flex;
+               flex-direction: row;
+               justify-content: space-around;
+           }
            
            
            body {
@@ -13,12 +26,7 @@
                font-family: 'Ubuntu', sans-serif;
 
            }
-           a{
-            text-decoration: none;  color:black;
-            margin-left: 1vw;
-            
-            
-           }
+           
            header{
                background-color: rosybrown;
                position:fixed;
@@ -53,10 +61,11 @@
             background-color: rosybrown;
                position:fixed;
                 display: flex;
-                
+                flex-direction: row;
+
                justify-content: space-between;
-               
-               align-items: center;
+               align-items:center;
+               align-content: center;
                bottom:0px;
                width: 100vw;
                height: 10vh;
@@ -65,47 +74,30 @@
            a{
             text-decoration: none;
               color: black;
-              
+
               padding: 3%;
-              
-              
-              
+
+
+
            }
            #contact{
-               width: 8vw;
-            margin-left:2%;
+               width: 9vw;
+
+            height: 6vh;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            margin-left:2vw;
+
+
            }
-           
+
            .social{
                width:8vw;
             margin-right:2%;
-            
-           }
-           #contact{
-            text-decoration: none;
-              color: black;
-              height: 100%;
-              position: relative;
-              top: 2vh;
-              left:0.5vw;
-              float: left;
-              z-index: 1;
-           }
-           #copyright{
-               position: relative;
-              
-              top:4vh;
-              left:35vw;
-              
-           }
-           .social{
-            position: relative;
-            top:2vh;
-            right: 3vw;
-            float:right;
-            padding: 0.5%;
-           }
 
+           }
            section{
                
                display: flex;
@@ -174,7 +166,9 @@
             
                display: flex;
                flex-direction: column;
-               justify-content: space-evenly;
+               justify-content: center;
+               
+               width:15vw;
            }
            label{
                font-weight: bold;
@@ -184,13 +178,56 @@
     <body>
         <header>
             <div>
-                
+
 
                 <a id="logo" href="index.html"><img height="60px" width="60px" src="assests/images/logo.png"/></a>
-                
+
             </div>
             <div>
-                <a id="login" href="login.html" target="_blank">Login</a>
+                <button id="login" type="button" class="btn btn-light" data-toggle="modal" data-target="#login-modal">LOGIN</button>
+
+                <!-- Button trigger modal -->
+
+
+  <!-- Modal -->
+  <div class="modal" tabindex="-1" role="dialog" id="login-modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Please Login</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form>
+        <div class="modal-body">
+          <!-- <p>Modal body text goes here.</p> -->
+          
+            <div class="form-group">
+              <label for="exampleInputEmail1">Username:</label>
+              <input type="email"  id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
+              <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password:</label><input type="password"  id="exampleInputPassword1" placeholder="Password">
+              
+            </div>
+            <!-- <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div> -->
+            <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+            <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                <button type="submit" class="btn btn-primary">Login</button>
+              </div>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
             </div>
     </header>
 
@@ -227,7 +264,7 @@
                      </div>
                         
                      
-                        <a id="pay" href="" target="_blank">Pay Now</a>
+                        <a id="pay" href="" target="_blank"><button type="button" class="btn btn-success" style="padding:4%;"width="40px">Pay Now</button></a>
                      
 
                 </div>
@@ -248,16 +285,51 @@
         </section>
 
         <footer>
-            <div id="contact" >
-                <a   href="contact.html" target="_blank">Contact Us</a>
-            </div>
+            <button id="contact" type="button" class="btn btn-info" data-toggle="modal" data-target="#contact-modal">Contact Us</button>
+            <div class="modal" tabindex="-1" role="dialog" id="contact-modal" >
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Get In Touch</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <form>
+                        <div class="form-group">
+                         
+                        </div>
+                        <div class="modal-body">
+                            <div>Thank you for reaching out!!!</div>
+                             
+                             <div>Please enter your email and we will get back to you.</div>
+                            </br>
+                            <label for="exampleInputEmail2">Email: </label>
+                            <input type="email"  id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter email">
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                     
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                        
+                       
+                        
+                      </form>
+                   
+                  </div>
+                </div>
+              </div>
+
+
             <div id="copyright">© 2020 ROOM SEARCH PVT. LTD.</div>
             <div class="social">
                 <a href="https://www.facebook.com" target="_blank"><img height="20px" width="22px" src="assests/images/facebook.png"/></a>
                 <a href="https://www.instagram.com/" target="_blank"><img height="20px" width="22px" src="assests/images/instagram.png"/></a>
                 <a href="https://www.twitter.com/" target="_blank"><img height="20px" width="22px" src="assests/images/twitter.png"/></a>
-                
+
             </div>
+
     </footer>
         
         
