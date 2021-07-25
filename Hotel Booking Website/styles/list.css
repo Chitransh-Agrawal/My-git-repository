@@ -1,0 +1,159 @@
+@media (min-width: 700px){
+   body{
+   width: 100%;
+   height: auto;
+}
+}
+.modal-footer{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.form-group{
+display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  background-color: #e0e0e0;
+  font-family: 'Ubuntu', sans-serif;
+
+}
+header{
+  background-color: rosybrown;
+  position:fixed;
+   display: flex;
+   
+  justify-content: space-between;
+  
+  align-items: center;
+  
+  width: 100vw;
+  height: 10vh;
+  z-index: 1;
+  
+  
+}
+#logo{
+  margin-left: 0.5vw;
+
+   
+}
+
+#login{
+
+  margin-right:3vw;
+ text-decoration: none;
+ color: black;
+
+font-weight: bold;
+
+}
+footer{
+background-color: rosybrown;
+  position:fixed;
+   display: flex;
+   
+  justify-content: space-between;
+  
+  align-items: center;
+  bottom:0px;
+  width: 100vw;
+  height: 10vh;
+  z-index: 1;
+}
+
+#contact{
+width: 9vw;
+
+height: 6vh;
+display:flex;
+flex-direction: column;
+justify-content: center;
+align-content: center;
+margin-left:2vw;
+}
+
+.social{
+  width:8vw;
+margin-right:2%;
+}
+
+section{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+}
+#content{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+margin-left:5%;
+  width: 100vw;
+  
+}
+
+.description{
+  display:flex;
+  justify-content: space-between;
+  flex-direction: row;
+ 
+  margin: 3%;
+  background-color: lightgrey;
+  width: 40vw;
+  height: 30vh;
+  
+  
+   
+}
+.description-text{
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  
+  height: 30vh;
+  width: 50vw;
+  padding:3% 4%;
+}
+.description:hover{
+  background-color: rosybrown;
+  text-decoration: none;
+  color:black;
+}
+.image{
+  height: 30vh;
+  width: 40vw;
+}
+
+#nav-list{
+ 
+  margin-top: 5%;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  
+  
+}
+
+li{
+  width: 10%;
+      
+list-style: none;
+
+
+}
+a{
+text-decoration: none; font-weight: bold; color:black;
+}
+
+.checked{
+color:orange;
+}
+

@@ -1,0 +1,199 @@
+@media (min-width: 576px){
+    body{
+    width: 100%;
+    height: auto;
+}
+}
+
+
+
+.modal-footer{
+   display:flex;
+   flex-direction: row;
+   justify-content: center;
+}
+.form-group{
+display:flex;
+   flex-direction: row;
+   justify-content: space-around;
+}
+
+body {
+   height: 100%;
+   width: 100%;
+   margin: 0px;
+   background-color: #e0e0e0;
+   font-family: 'Ubuntu', sans-serif;
+
+}
+header{
+   background-color: rosybrown;
+   position:fixed;
+    display: flex;
+
+   justify-content: space-between;
+
+   align-items: center;
+
+   width: 100vw;
+   height: 10vh;
+   z-index: 1;
+
+
+}
+#logo{
+   margin-left: 0.5vw;
+
+
+}
+
+#login{
+
+   margin-right:3vw;
+  text-decoration: none;
+  color: black;
+
+font-weight: bold;
+
+}
+
+a{
+text-decoration: none;
+  color: black;
+}
+#content{
+   display:flex;
+   flex-direction: column;
+   justify-content: center;
+
+  height: 100vh;
+  width: 100vw;
+
+
+}
+
+#search-image{
+   display:flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background-image: url('https://media-cdn.tripadvisor.com/media/photo-o/14/10/2e/af/india.jpg');
+   min-height: 380px;
+   background-repeat: no-repeat;
+   background-position: center;
+   width: 100vw;
+   margin-top: 9%;
+   
+
+}
+
+
+
+#field{
+   width: 20%;
+   height: 10%;
+
+
+   border: 0px hidden transparent;
+    border-radius: 12px;
+    background-color: #f1f1f1;
+   margin-top: 10%;
+   padding: 10px;
+   font-size: 16px;
+
+}
+input:focus{
+   outline: none;
+}
+#images{
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  margin-top: 2%;
+}
+
+.pics{
+
+
+   border-radius:25%;
+
+}
+.pics-int{
+
+   box-shadow: 0px 10px 10px 10px grey;
+   position: relative;
+   text-align: center;
+   border-radius:25%;
+
+}
+
+.pics-int:hover{
+   opacity: .5;
+
+}
+
+.overlay{
+   position:absolute;
+   top:8px;
+   right: 5px;
+   z-index: 5;
+}
+
+
+
+#more{
+display: flex;
+   flex-direction: row;
+   justify-content: center;
+
+text-decoration: none;
+  color: black;
+
+
+}
+
+footer{
+background-color: rosybrown;
+   position:fixed;
+    display: flex;
+    flex-direction: row;
+
+   justify-content: space-between;
+   align-items:center;
+   align-content: center;
+   bottom:0px;
+   width: 100vw;
+   height: 10vh;
+   z-index: 1;
+}
+a{
+text-decoration: none;
+  color: black;
+
+  padding: 3%;
+
+
+
+}
+#contact{
+   width: fit-content;
+
+height: 6vh;
+display:flex;
+flex-direction: column;
+justify-content: center;
+align-content: center;
+margin-left:2vw;
+
+
+}
+
+.social{
+   width:8%;
+margin-right:2%;
+
+}

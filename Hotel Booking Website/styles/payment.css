@@ -1,0 +1,171 @@
+.modal-footer{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.form-group{
+ display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    background-color: #e0e0e0;
+    font-family: 'Ubuntu', sans-serif;
+
+}
+
+header{
+    background-color: rosybrown;
+    position:fixed;
+     display: flex;
+     
+    justify-content: space-between;
+    
+    align-items: center;
+    
+    width: 100vw;
+    height: 10vh;
+    z-index: 1;
+    
+    
+}
+#logo{
+    margin-left: 0.5vw;
+  
+     
+}
+
+#login{
+  
+    margin-right:3vw;
+   text-decoration: none;
+   color: black;
+ 
+ font-weight: bold;
+
+}
+footer{
+ background-color: rosybrown;
+    position:fixed;
+     display: flex;
+     flex-direction: row;
+
+    justify-content: space-between;
+    align-items:center;
+    align-content: center;
+    bottom:0px;
+    width: 100vw;
+    height: 10vh;
+    z-index: 1;
+}
+a{
+ text-decoration: none;
+   color: black;
+
+   padding: 3%;
+
+
+
+}
+#contact{
+    width: 9vw;
+
+ height: 6vh;
+ display:flex;
+ flex-direction: column;
+ justify-content: center;
+ align-content: center;
+ margin-left:2vw;
+
+
+}
+
+.social{
+    width:8vw;
+ margin-right:2%;
+
+}
+section{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.image{
+    border: 1px solid black;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width:50vw;
+    height: 30vh;
+    background-color: rgb(132, 136, 139);
+    margin: 20vh 0 5vh 25vw;
+    
+    
+}
+.image-details{
+   
+    width:50vw;
+    height: 20vh;
+ display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-left: 2vw;
+    flex-wrap: wrap;
+    
+}
+
+.payment-div{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border:1px solid black;
+    background-color: rosybrown;
+    border-radius: 5px;
+    height: 30vh;
+    width: 80vw;
+    margin: 0 0 10vh 10vw;
+    flex-wrap: wrap;
+}
+.customer{
+    font-family: cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 2%;
+    height: 20vh;
+    
+}
+.tarrif{
+ font-family: cursive;
+ display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+    margin:2%;
+    
+    border-radius: 5px;
+    padding: 1% 2% 1% 2%;
+}
+#pay{
+ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    width:15vw;
+}
+label{
+    font-weight: bold;
+}
