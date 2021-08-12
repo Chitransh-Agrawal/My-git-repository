@@ -4,9 +4,13 @@
     flex-direction: column;
 }
 #city-cards {
-    display: flex;
+    display: grid;
     justify-content: space-evenly;
+    align-items: center;
+    grid-template-columns: repeat(4, 150px);
+    grid-auto-rows: 200px;
     padding: 4% 0%;
+    
 }
 .city-image{
     height: 150px;
