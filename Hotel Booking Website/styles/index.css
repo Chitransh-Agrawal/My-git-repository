@@ -1,199 +1,71 @@
-@media (min-width: 576px){
-    body{
-    width: 100%;
-    height: auto;
-}
-}
-
-
-
-.modal-footer{
-   display:flex;
-   flex-direction: row;
-   justify-content: center;
-}
-.form-group{
-display:flex;
-   flex-direction: row;
-   justify-content: space-around;
-}
-
-body {
-   height: 100%;
-   width: 100%;
-   margin: 0px;
-   background-color: #e0e0e0;
-   font-family: 'Ubuntu', sans-serif;
-
-}
-header{
-   background-color: rosybrown;
-   position:fixed;
+/* Added CSS for city image on landing page */
+#index-container {
     display: flex;
-
-   justify-content: space-between;
-
-   align-items: center;
-
-   width: 100vw;
-   height: 10vh;
-   z-index: 1;
-
-
+    flex-direction: column;
 }
-#logo{
-   margin-left: 0.5vw;
-
-
+#city-cards {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 4% 0%;
 }
-
-#login{
-
-   margin-right:3vw;
-  text-decoration: none;
-  color: black;
-
-font-weight: bold;
-
+.city-image{
+    height: 150px;
+    width: 150px;
+    border-radius: 25%;
+    box-shadow: 10px 10px 10px grey;
 }
-
-a{
-text-decoration: none;
-  color: black;
+.city-card-and-name-inner {
+    position: relative;
 }
-#content{
-   display:flex;
-   flex-direction: column;
-   justify-content: center;
-
-  height: 100vh;
-  width: 100vw;
-
-
+/* Added CSS for background image */
+#banner{
+    background-image: url("https://media-cdn.tripadvisor.com/media/photo-o/14/10/2e/af/india.jpg");
+    /* Control the height of the image */
+    height: 380px;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
-
-#search-image{
-   display:flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   background-image: url('https://media-cdn.tripadvisor.com/media/photo-o/14/10/2e/af/india.jpg');
-   min-height: 380px;
-   background-repeat: no-repeat;
-   background-position: center;
-   width: 100vw;
-   margin-top: 9%;
-   
-
+#search-bar {
+    position: absolute;
+    top: 50%;
+    left: 36%; 
+    right: 36%;
+    bottom: 50%;
 }
-
-
-
-#field{
-   width: 20%;
-   height: 10%;
-
-
-   border: 0px hidden transparent;
-    border-radius: 12px;
+#search-input {
+    border: 1px solid transparent;
     background-color: #f1f1f1;
-   margin-top: 10%;
-   padding: 10px;
-   font-size: 16px;
-
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 12px;
+    width: 100%;
 }
-input:focus{
-   outline: none;
+#search-input:focus {
+    outline: none;
 }
-#images{
-
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  align-content: center;
-  margin-top: 2%;
+.overlay {
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    text-align: center;
+    border-radius: 25%;
 }
-
-.pics{
-
-
-   border-radius:25%;
-
+.city-card-and-name-inner:hover .overlay {
+    opacity: 1;
 }
-.pics-int{
-
-   box-shadow: 0px 10px 10px 10px grey;
-   position: relative;
-   text-align: center;
-   border-radius:25%;
-
+.overlay span {
+    position:relative;
+    top:45%;
 }
-
-.pics-int:hover{
-   opacity: .5;
-
-}
-
-.overlay{
-   position:absolute;
-   top:8px;
-   right: 5px;
-   z-index: 5;
-}
-
-
-
-#more{
-display: flex;
-   flex-direction: row;
-   justify-content: center;
-
-text-decoration: none;
-  color: black;
-
-
-}
-
-footer{
-background-color: rosybrown;
-   position:fixed;
+#view-more {
+    margin-bottom:7%;
     display: flex;
-    flex-direction: row;
-
-   justify-content: space-between;
-   align-items:center;
-   align-content: center;
-   bottom:0px;
-   width: 100vw;
-   height: 10vh;
-   z-index: 1;
-}
-a{
-text-decoration: none;
-  color: black;
-
-  padding: 3%;
-
-
-
-}
-#contact{
-   width: fit-content;
-
-height: 6vh;
-display:flex;
-flex-direction: column;
-justify-content: center;
-align-content: center;
-margin-left:2vw;
-
-
-}
-
-.social{
-   width:8%;
-margin-right:2%;
-
+    justify-content: center;
 }

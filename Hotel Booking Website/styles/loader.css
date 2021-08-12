@@ -1,22 +1,20 @@
-@keyframes loader-animation{
-    0% {transform: rotate(0deg);}
-    100% {transform: rotate(360deg);}
-    }
-   
-   .loader{
-         margin-top: 15%;
-       width: 70px;
-       height: 70px;
-       
-       
-       border-radius: 50%;
-       border: 12px solid #f3f3f3;
-       border-top: 12px solid #444444;
-        animation: loader-animation 1s linear infinite;
-   }
-   .container{
-       display:flex;
-       justify-content: center;
-       align-items: center;
-       align-content: center;
-   }
+.loader { 
+    border: 12px solid #f3f3f3; 
+    border-radius: 50%; 
+    border-top: 12px solid #444444; 
+    width: 70px; 
+    height: 70px; 
+    animation: spin 1s linear infinite; 
+    position: absolute; 
+    top: 0; 
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
+    margin: auto;
+} 
+
+@keyframes spin { 
+    100% { 
+        transform: rotate(360deg); 
+    } 
+} 
