@@ -20,23 +20,23 @@
             <!-- Added the main body elements: Hotel Details(wih image of hotel), Customer Details and Payment Details -->
             <div id="payment-container">
                 <div id="hotel-details">
-                    <img src="https://media-cdn.tripadvisor.com/media/photo-w/17/b3/09/b4/by-the-poolside.jpg" class="hotel-image"> 
+                    <img  class="hotel-image" id="paymentImg"> 
                     <div class="hotel-name-rating">
-                        <h2>Radisson Blu Hotel</h2>
-                        <p>#38 of 1,289 hotels in New Delhi</p>
-                        <p>National Highway 8, New Delhi 110017 India</p>
+                        <h2 id="paymentName"></h2>
+                        <p id="paymentSerial">#38 of 1,289 hotels in New Delhi</p>
+                        <p id="paymentAddress">National Highway 8, New Delhi 110017 India</p>
                     </div>
                 </div>
                 <div id="customer-payment-details">
                     <div id="customer-details">
-                        <p><strong class="heading">Name:</strong>&nbsp;John Doe</p> 
-                        <p><strong class="heading">Number of Adults:</strong>&nbsp;2</p>
-                        <p><strong class="heading">Check-in Date:</strong>&nbsp;04/06/2020</p>
-                        <p><strong class="heading">Check-out Date:</strong>&nbsp;06/06/2020</p>
+                        <p><strong class="heading" id="formName">Name:</strong></p> 
+                        <p><strong class="heading" id="formAdults">Number of Adults:</strong></p>
+                        <p><strong class="heading" id="formIn">Check-in Date:</strong></p>
+                        <p><strong class="heading" id="formOut">Check-out Date:</strong></p>
                     </div>
                     <div id="payment-details">
-                        <p><strong class="heading">Tariff Breakdown:</strong>&nbsp;Rs.1000 x 2 Adults x 5 Nights</p>
-                        <p><strong class="heading">Total Amount:</strong>&nbsp;Rs.10000</p>
+                        <p><strong class="heading" id="formBreak">Tariff Breakdown:</strong></p>
+                        <p><strong class="heading" id="formAmount">Total Amount:</strong></p>
                     </div>
                     <a href="#" id="pay-now">
                         <button type="button" id="pay-button" class="btn btn-success" disabled>Pay Now</button>
