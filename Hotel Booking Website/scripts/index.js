@@ -1,4 +1,6 @@
 
+
+
 function viewMore(){
     
     document.getElementById("city-cards").style.display = "grid";
@@ -7,7 +9,10 @@ function viewMore(){
 
 function getName(str){
     console.log(str);
-    sessionStorage.setItem("HHH",str);
+    sessionStorage.setItem("HHH", str);
 
 }
+
+localStorage.setItem("HHH","jabalpur");
+
 //sessionStorage.setItem("hotel_name", document.getElementsById('delhi').value);
