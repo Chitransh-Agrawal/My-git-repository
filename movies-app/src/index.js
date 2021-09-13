@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Header from './common/header/Header';
 import Home from './screens/home/Home';
+import Details from './screens/details/Details';
 
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Home/>
+  
+   <Details image="https://upload.wikimedia.org/wikipedia/en/8/8a/Dark_Knight.jpg"/>
+  
   </React.StrictMode>,
   document.getElementById('root')
 );

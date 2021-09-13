@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import  './Home.css';
 import Header from '../../common/header/Header';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import Details from '../details/Details';
 
 import '../../common/moviesData';
 import '../../common/genre';
@@ -38,6 +40,7 @@ class Home extends Component {
 
     render(){
         return (
+          <Router>
             <div className="home-container">
                 <Header/>
                 <span id="heading">Upcoming Movies</span>
@@ -63,13 +66,18 @@ moviesData.map((item)=>{
 
     <div className="left">
 
-    <ImageList rowHeight={350} cols={4}>
+    <ImageList  className="image-items-released" rowHeight={350} cols={4}>
 {
 moviesData.map((item)=>{
-    return( <ImageListItem  className="image-items-released"  key={item.id}>
+    return( 
+              
+              <ImageListItem   key={item.id}><Link to="/details">
                 <img src={item.poster_url} alt={item.title} />
                 <ImageListItemBar title={item.title} subtitle={item.release_date.toString()}/>
-             </ImageListItem>);
+                </Link>
+             </ImageListItem>
+              
+             );
 }) 
 } 
     </ImageList>
@@ -192,9 +200,11 @@ moviesData.map((item)=>{
 
 </div>
 
+<Route path='/Details' render={({history}, props) => <Details {...props} history={history}  /> } />
 
 
 </div>
+</Router>
 );
     }
 }

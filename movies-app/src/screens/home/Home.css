@@ -28,22 +28,27 @@
 }
 
 .flex-container{
-    width: 100vw;
+    width: 100%;
     display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
 }
 
 .left{
-    width: 76vw;
+    
     margin: 16px;
+    
+
 }
 .image-items-released{
     
     flex-wrap: wrap;
     
-    
+    width: 75vw;
     display: flex;
     
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
 }
 
@@ -51,6 +56,4 @@
     cursor:pointer;
 }
 
-#movie-name-input:hover{
-    
-}
+
