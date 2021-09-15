@@ -32,30 +32,27 @@ import genres from '../../common/genre';
 import artists from '../../common/artists';
 
  
+const Home= (props)=> {
 
+  const [moviesDB, setMoviesDB]=React.useState(moviesData);
 
-
-
-class Home extends Component {
-
-    render(){
-        return (
-          <Router>
-            <div className="home-container">
-                <Header/>
-                <span id="heading">Upcoming Movies</span>
-               
-               
-               <ImageList className="image-container" cols={6}>
+  return (
+    <Router>
+      <div className="home-container">
+          <Header/>
+          <span id="heading">Upcoming Movies</span>
+         
+         
+         <ImageList className="image-container" cols={6}>
 {
-moviesData.map((item)=>{
-    return( <ImageListItem  className="image-items"  key={item.id}>
-                <img src={item.poster_url} alt={item.title} />
-                <ImageListItemBar title={item.title}/>
-             </ImageListItem>);
+moviesDB.map((item)=>{
+return( <ImageListItem  className="image-items"  key={item.id}>
+          <img src={item.poster_url} alt={item.title} />
+          <ImageListItemBar title={item.title}/>
+       </ImageListItem>);
 }) 
 } 
-            </ImageList>
+      </ImageList>
 
 
 
@@ -64,136 +61,136 @@ moviesData.map((item)=>{
 <div className="flex-container">
 
 
-    <div className="left">
+<div className="left">
 
-    <ImageList  className="image-items-released" rowHeight={350} cols={4}>
+<ImageList  className="image-items-released" rowHeight={350} cols={4}>
 {
-moviesData.map((item)=>{
-    return( 
-              
-              <ImageListItem   key={item.id}><Link to="/details">
-                <img src={item.poster_url} alt={item.title} />
-                <ImageListItemBar title={item.title} subtitle={item.release_date.toString()}/>
-                </Link>
-             </ImageListItem>
-              
-             );
+moviesDB.map((item)=>{
+return( 
+        
+        <ImageListItem   key={item.id}><Link to="/details">
+          <img src={item.poster_url} alt={item.title} />
+          <ImageListItemBar title={item.title} subtitle={item.release_date.toString()}/>
+          </Link>
+       </ImageListItem>
+        
+       );
 }) 
 } 
-    </ImageList>
-     </div>
+</ImageList>
+</div>
 
 
-     
 
-     <div className="right">
 
-     <Card >
-      <CardContent color="theme.palette.primary.light">
+<div className="right">
 
-      <Typography variant="h6"  >
-          FIND MOVIES BY:
-        </Typography>
+<Card >
+<CardContent color="theme.palette.primary.light">
 
-        <form>
+<Typography variant="h6"  >
+    FIND MOVIES BY:
+  </Typography>
 
-        <FormControl className="card-component">
-        <InputLabel htmlFor="movie-name-input">Movie Name</InputLabel>
-        <Input id="movie-name-input" placeholder="Movie Name" />
-       </FormControl>
+  <form>
 
+  <FormControl className="card-component">
+  <InputLabel htmlFor="movie-name-input">Movie Name</InputLabel>
+  <Input id="movie-name-input" placeholder="Movie Name" />
+ </FormControl>
+
+
+
+<br/>
+
+<FormControl className="card-component">
+  <InputLabel rowWidth={100} id="artists-select-label">Genres</InputLabel>
+  <Select placeholder="Genres"
+      multiple
+      value={moviesDB}
+      labelId="demo-simple-select-label"
+      id="demo-simple-select"
       
+  >
+      {
+          genres.map((gene)=>{
+              return(<MenuItem key={gene.id} value={gene.name}><Checkbox/>{gene.name}</MenuItem>
 
-      <br/>
-
-      <FormControl className="card-component">
-        <InputLabel rowWidth={100} id="artists-select-label">Genres</InputLabel>
-        <Select placeholder="Genres"
-            multiple
-            value={moviesData}
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            
-        >
-            {
-                genres.map((gene)=>{
-                    return(<MenuItem key={gene.id} value={gene.name}><Checkbox/>{gene.name}</MenuItem>
-
-                    );
-                })
-            }
-         
-        </Select>
-      </FormControl>
-
-
-      <br/>
-
-<FormControl className="card-component" >
- <InputLabel rowWidth={100} id="genres-select-label">Artists</InputLabel>
- <Select placeholder="Genres"
-     multiple
-     value={moviesData}
-     labelId="demo-simple-select-label"
-     id="demo-simple-select"
-     rowWidth={100}
- >
-     {
-         artists.map((gene)=>{
-             return(<MenuItem key={gene.id} value={gene.first_name}><Checkbox/>{`${gene.first_name} ${gene.last_name}`}</MenuItem>
-
-             );
-         })
-     }
-  
- </Select>
+              );
+          })
+      }
+   
+  </Select>
 </FormControl>
 
-     <br/>
 
-        <FormControl className="card-component">
-        <TextField
-          id="standard-number"
-          label="Release Date Start"
-          type="date"
-          InputLabelProps={{
-            shrink: true,
-          }}
-        />
-       </FormControl>
+<br/>
 
-       <br/>
+<FormControl className="card-component" >
+<InputLabel rowWidth={100} id="genres-select-label">Artists</InputLabel>
+<Select placeholder="Genres"
+multiple
+value={moviesDB}
+labelId="demo-simple-select-label"
+id="demo-simple-select"
+rowWidth={100}
+>
+{
+   artists.map((gene)=>{
+       return(<MenuItem key={gene.id} value={gene.first_name}><Checkbox/>{`${gene.first_name} ${gene.last_name}`}</MenuItem>
 
-        <FormControl className="card-component">
-        <TextField
-          id="standard-number"
-          label="Release Date End"
-          type="date"
-          InputLabelProps={{
-            shrink: true,
-          }}
-        />
-       </FormControl>
+       );
+   })
+}
 
-       
+</Select>
+</FormControl>
+
+<br/>
+
+  <FormControl className="card-component">
+  <TextField
+    id="standard-number"
+    label="Release Date Start"
+    type="date"
+    InputLabelProps={{
+      shrink: true,
+    }}
+  />
+ </FormControl>
+
+ <br/>
+
+  <FormControl className="card-component">
+  <TextField
+    id="standard-number"
+    label="Release Date End"
+    type="date"
+    InputLabelProps={{
+      shrink: true,
+    }}
+  />
+ </FormControl>
+
+ 
 
 
 
-        </form>
-        
+  </form>
+  
 
-        
-        
-      </CardContent>
-
-
-      <CardActions>
-        <Button  variant="contained" color="primary">APPLY</Button>
-      </CardActions>
-    </Card>
+  
+  
+</CardContent>
 
 
-     </div>
+<CardActions>
+  <Button  variant="contained" color="primary">APPLY</Button>
+</CardActions>
+</Card>
+
+
+</div>
 
 
 
@@ -206,36 +203,8 @@ moviesData.map((item)=>{
 </div>
 </Router>
 );
-    }
 }
 
-// function SingleLineImageList() {
- 
-  
-//     return (
-//       <div className={classes.root}>
-//         <ImageList className={classes.imageList} cols={2.5}>
-//           {itemData.map((item) => (
-//             <ImageListItem key={item.img}>
-//               <img src={item.img} alt={item.title} />
-//               <ImageListItemBar
-//                 title={item.title}
-//                 classes={{
-//                   root: classes.titleBar,
-//                   title: classes.title,
-//                 }}
-//                 actionIcon={
-//                   <IconButton aria-label={`star ${item.title}`}>
-//                     <StarBorderIcon className={classes.title} />
-//                   </IconButton>
-//                 }
-//               />
-//             </ImageListItem>
-//           ))}
-//         </ImageList>
-//       </div>
-//     );
-//   }
 
 
 
