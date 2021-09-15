@@ -16,3 +16,12 @@ function getName(str){
 localStorage.setItem("HHH","jabalpur");
 
 //sessionStorage.setItem("hotel_name", document.getElementsById('delhi').value);
+
+
+function done(){
+    document.getElementById("myForm").submit();
+    
+    console.log(document.querySelector('input[name="chitransh"]').value);
+    document.getElementById('view-more-button').innerHTML = document.querySelector('input[name="chitransh"]').value;
+}
+
