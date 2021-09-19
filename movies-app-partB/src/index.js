@@ -8,7 +8,7 @@ import Details from './screens/details/Details';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Details />
+    <Home />
   </React.StrictMode>,
   document.getElementById('root')
 );
