@@ -24,6 +24,6 @@ const mongoose = require('mongoose')
 
   let GenreModel = mongoose.model('genres', genreSchema);
 
-  GenreModel.find();
+  
 
   module.exports = GenreModel;

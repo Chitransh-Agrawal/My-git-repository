@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port =3000;
+const port =8085;
 const cors = require('cors');
 
 const db = require("./models");
@@ -9,6 +9,10 @@ const artistRouter = require("./routes/artist.routes");
 const movieRouter = require("./routes/movie.routes");
 const userRouter = require("./routes/user.routes")
 
+var corsOption ={
+  origin :'http://localhost:3000'
+};
+app.use(cors(corsOption));
 
 
 /*
@@ -16,11 +20,13 @@ http = require('http');
 https=require('https');
 */
 
- app.use( '/', genreRouter);
- app.use( '/', artistRouter);
-app.use( '/', movieRouter);
-app.use('/', userRouter);
-app.get("/", (req, res) => {
+ app.use( '/api', genreRouter);
+ app.use( '/api', artistRouter);
+app.use( '/api', movieRouter);
+app.use('/api', userRouter);
+
+
+app.get('/api', (req, res) => {
     res.json({ message: "Welcome to Upgrad Movie booking application development." });
   });
 

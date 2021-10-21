@@ -1,4 +1,4 @@
-const { response } = require("express");
+
 const GenreModel = require("../models/genre.model");
 
 const findAllGenres =  async function(){

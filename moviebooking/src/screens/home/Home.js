@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import './Home.css';
 import Header from '../../common/header/Header';
 import { withStyles } from '@material-ui/core/styles';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
+
+import ImageList from '@material-ui/core/ImageList';
+import ImageListItem from '@material-ui/core/ImageListItem';
+import ImageListItemBar from '@material-ui/core/ImageListItemBar';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import FormControl from '@material-ui/core/FormControl';
@@ -17,6 +18,8 @@ import Checkbox from '@material-ui/core/Checkbox';
 import ListItemText from '@material-ui/core/ListItemText';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+
+
 
 const styles = theme => ({
     root: {
@@ -39,7 +42,7 @@ const styles = theme => ({
         cursor: 'pointer'
     },
     formControl: {
-        margin: theme.spacing.unit,
+        margin: theme.spacing(1),
         minWidth: 240,
         maxWidth: 240
     },
@@ -65,7 +68,8 @@ class Home extends Component {
         }
     }
 
-    componentWillMount() {
+
+    UNSAFE_componentWillMount() {
         // Get upcoming movies
         let data = null;
         let xhr = new XMLHttpRequest();
@@ -73,21 +77,25 @@ class Home extends Component {
         xhr.addEventListener("readystatechange", function () {
           
             if (this.readyState === 4) {
+                
                 debugger;
                 that.setState({
                     upcomingMovies: JSON.parse(this.responseText).movies
+                    
                 });
+                console.log(JSON.parse(this.responseText));
             }
         });
-
-        xhr.open("GET", this.props.baseUrl + "movies?status=PUBLISHED");
+      
+       // xhr.open("GET", this.props.baseUrl + "movies?status=PUBLISHED");
+       xhr.open("GET", 'http://localhost:8085/api/movies?status=PUBLISHED');
         xhr.setRequestHeader("Cache-Control", "no-cache");
         xhr.send(data);
 
         // Get released movies
         let dataReleased = null;
         let xhrReleased = new XMLHttpRequest();
-        xhrReleased.addEventListener("readystatechange", function () {
+        xhrReleased.addEventListener("readystatechange",  function () {
             if (this.readyState === 4) {
                 that.setState({
                     releasedMovies: JSON.parse(this.responseText).movies
@@ -198,29 +206,29 @@ class Home extends Component {
                 <div className={classes.upcomingMoviesHeading}>
                     <span>Upcoming Movies</span>
                 </div>
-
-                <GridList cols={5} className={classes.gridListUpcomingMovies} >
+                 
+                <ImageList cols={5} className={classes.imageListUpcomingMovies} >
                     {this.state.upcomingMovies.map(movie => (
-                        <GridListTile key={"upcoming" + movie._id}>
+                        <ImageListItem key={"upcoming" + movie._id}>
                             <img src={movie.poster_url} className="movie-poster" alt={movie.title} />
-                            <GridListTileBar title={movie.title} />
-                        </GridListTile>
+                            <ImageListItemBar title={movie.title} />
+                        </ImageListItem>
                     ))}
-                </GridList>
-
+                </ImageList>
+                    
                 <div className="flex-container">
                     <div className="left">
-                        <GridList cellHeight={350} cols={4} className={classes.gridListMain}>
+                        <ImageList rowHeight={350} cols={4} className={classes.imageListMain}>
                             {this.state.releasedMovies.map(movie => (
-                                <GridListTile onClick={() => this.movieClickHandler(movie.movieid)} className="released-movie-grid-item" key={"grid" + movie._id}>
+                                <ImageListItem onClick={() => this.movieClickHandler(movie.movieid)} className="released-movie-grid-item" key={"grid" + movie._id}>
                                     <img src={movie.poster_url} className="movie-poster" alt={movie.title} />
-                                    <GridListTileBar
+                                    <ImageListItemBar
                                         title={movie.title}
                                         subtitle={<span>Release Date: {new Date(movie.release_date).toDateString()}</span>}
                                     />
-                                </GridListTile>
+                                </ImageListItem>
                             ))}
-                        </GridList>
+                        </ImageList>
                     </div>
                     <div className="right">
                         <Card>
