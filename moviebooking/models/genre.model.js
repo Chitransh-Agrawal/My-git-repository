@@ -3,6 +3,8 @@ const mongoose = require('mongoose')
 
 
 
+
+
   let genreSchema = new mongoose.Schema({
     genreid: {
       type: Number,
@@ -20,6 +22,8 @@ const mongoose = require('mongoose')
     }
   })
 
-  let GenreModel = mongoose.model('Genres', genreSchema);
+  let GenreModel = mongoose.model('genres', genreSchema);
+
+  GenreModel.find();
 
   module.exports = GenreModel;

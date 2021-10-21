@@ -48,6 +48,6 @@ const mongoose = require('mongoose')
     }
   })
 
-  let ArtistModel = mongoose.model('Artists', artistSchema);
+  let ArtistModel = mongoose.model('artists', artistSchema);
 
   module.exports = ArtistModel;

@@ -1,7 +1,31 @@
-http = require('http');
-https=require('https');
+const express = require("express");
+const app = express();
+const port =3000;
+const cors = require('cors');
 
 const db = require("./models");
+const genreRouter = require("./routes/genre.routes");
+const artistRouter = require("./routes/artist.routes");
+const movieRouter = require("./routes/movie.routes");
+
+
+
+/*
+http = require('http');
+https=require('https');
+*/
+
+ app.use( '/', genreRouter);
+ app.use( '/', artistRouter);
+app.use( '/', movieRouter);
+app.get("/", (req, res) => {
+    res.json({ message: "Welcome to Upgrad Movie booking application development." });
+  });
+
+
+
+
+
 
 db.mongoose
   .connect(db.url, {
@@ -16,6 +40,13 @@ db.mongoose
     console.log("Cannot connect to the database!", err);
     process.exit();
   });
+
+
+  app.listen(port,()=>{
+      console.log('listening...');
+  })
+
+  /*
 app = http.createServer((req,res)=>{
     if(req.url==='/movies'){
         res.write('All Movies Data in JSON format from Mongo DB');
@@ -34,4 +65,4 @@ app = http.createServer((req,res)=>{
 })
 
 app.listen(9000);
-
+*/

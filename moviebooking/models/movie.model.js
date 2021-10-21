@@ -15,81 +15,84 @@ const mongoose = require('mongoose')
       type: String,
       required: true,
       unique: true,
-      lowercase: true,
+      
       
     },
     published : {
-      required: true,
+      type: Boolean,
+      required: true
       },
     released : {
-      required: true,
+      
+      type: Boolean,
+      required: true
       },
       poster_url : {
         type: String,
         required: true,
         unique: true,
-        lowercase: true,
+        lowercase: true
         },
         release_date : {
           type: String,
           required: true,
           unique: false,
-          lowercase: true,
+          lowercase: true
           
         },
         publish_date : {
           type: String,
           required: true,
           unique:false,
-          lowercase: true,
+          lowercase: true
           
         },
         artists : {
           type: Array,
           required: true,
           unique: false,
-          lowercase: true,
+          lowercase: true
           
         },
         genres : {
           type: Array,
           required: true,
           unique: false,
-          lowercase: true,
+          lowercase: true
           
         },
         duration : {
           type: Number,
           required: true,
           unique: false,
-          lowercase: true,
+          lowercase: true
           
         },
         critic_rating : {
           type: Number,
           required: true,
           unique: false,
-          lowercase: true,
+          lowercase: true
           
         },
         trailer_url : {
           type: String,
           required: true,
           unique: true,
-          lowercase: true,
+          lowercase: true
           
         },
         wiki_url : {
           type: String,
           required: true,
           unique: true,
-          lowercase: true,
+          lowercase: true
           
         },
         story_line : {
           type: String,
           required: true,
-          unique: true,
+          unique: true
           },
           shows : {
             type: Array,
@@ -100,6 +103,6 @@ const mongoose = require('mongoose')
           }
   })
 
-  let MovieModel = mongoose.model('Movies', movieSchema);
+  let MovieModel = mongoose.model('movies', movieSchema);
 
   module.exports = MovieModel;
