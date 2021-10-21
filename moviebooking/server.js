@@ -7,6 +7,7 @@ const db = require("./models");
 const genreRouter = require("./routes/genre.routes");
 const artistRouter = require("./routes/artist.routes");
 const movieRouter = require("./routes/movie.routes");
+const userRouter = require("./routes/user.routes")
 
 
 
@@ -18,6 +19,7 @@ https=require('https');
  app.use( '/', genreRouter);
  app.use( '/', artistRouter);
 app.use( '/', movieRouter);
+app.use('/', userRouter);
 app.get("/", (req, res) => {
     res.json({ message: "Welcome to Upgrad Movie booking application development." });
   });
