@@ -6,7 +6,17 @@ module.exports = app => {
   
     var router = require("express").Router();
   
-   router.post("/products", products.create);
+   router.get("/products", products.searchProduct);
+
+   router.get("/products/categories", products.getProductCategories);
+
+   router.get("/products/:id", products.getProductById);
+
+   router.post("/products", products.saveProduct);
+
+   router.put("/products/:id", products.updateProduct);
+
+   router.delete("/products/:id", products.deleteProduct);
     
     app.use('/', router);
   };

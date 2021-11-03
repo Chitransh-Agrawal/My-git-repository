@@ -1,38 +1,34 @@
 const db = require("../models");
-const Tutorial = db.tutorials;
+const Product = db.products;
 
 // Create and Save a new Course
-exports.create = (req, res) => {
+exports.saveProduct= (req, res) => {
     // Validate request
-    if (!req.body.title) {
-      res.status(400).send({ message: "Content can not be empty!" });
-      return;
-    }
   
-    let _chap =  req.body.chapters.toString().split(',')
-    let _skills =  req.body.skills.toString().split(',')
+  /*
+  if(!req.body.token){
+    res.status(400).json("Please Login first to access this endpoint!");
+  }
+  */
+    
 
-    // Create a Course
-    const tutorial = new Tutorial({
-      title: req.body.title,
-      description: req.body.description,
-      skills : _skills,
-      chapters : _chap,    // chapter names shd be comma seperated
-      published: req.body.published ? req.body.published : false,
-      category : req.body.category,
-      duration : req.body.duration, 
-      imageURL : req.body.imageURL,
-      videoURL : req.body.videoURL,
-      notesURL : req.body.notesURL,
-      priceInRupees : req.body.priceInRupees,
-      priceAfterDiscount : req.body.priceAfterDiscount,
-      author: req.body.author
+    // Create 
+    const product = new Product({
+      name: req.body.name,
+            category: req.body.category,
+            manufacturer: req.body.manufacturer,
+            imageURL: req.body.imageUrl,
+            availableItems: req.body.availableItems,
+            description: req.body.description,
+            price: req.body.price,
+
+
       
     });
   
     // Save Course in the database
-    tutorial
-      .save(tutorial)
+    product
+      .save()
       .then(data => {
         res.send(data);
       })
@@ -40,7 +36,7 @@ exports.create = (req, res) => {
 
         res.status(500).send({
           message:
-            err.message || "Some error occurred while creating the Course."
+            err.message || "Some error occurred while creating the Product."
         });
       });
   };
@@ -49,11 +45,11 @@ exports.create = (req, res) => {
 
 // Retrieve all Courses from the database by title.
 // if no title is passed then all courses are retrieved
-exports.findAlltitle = (req, res) => {
-    const title = req.query.title;
-    var condition = title ? { title: { $regex: new RegExp(title), $options: "i" } } : {};
+exports.searchProduct = (req, res) => {
+    const category = req.query.category;
+    var condition = category ? { category: { $regex: new RegExp(category), $options: "i" } } : {};
   
-    Tutorial.find(condition)
+    Product.find(condition)
       .then(data => {
         res.send(data);
       })
@@ -68,25 +64,11 @@ exports.findAlltitle = (req, res) => {
 
 // Retrieve all Courses from the database by Category.
 //if no category is passed then all courses are retrieved
-exports.findCoursesByCategory = (req, res) => {
-  const category = req.params.categoryName;
-  var condition = category ? { category: { $regex: new RegExp(category), $options: "i" } } : {};
 
-  Tutorial.find(condition)
-    .then(data => {
-      res.send(data);
-    })
-    .catch(err => {
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving Courses."
-      });
-    });
-};
 
-exports.findAllCategories = (req, res) => {
+exports.getProductCategories = (req, res) => {
   
-  Tutorial.find({}).select('category').distinct('category')
+  Product.find({}).select('category').distinct('category')
     .then(data => {
       res.send(data);
     })
@@ -101,13 +83,13 @@ exports.findAllCategories = (req, res) => {
 
 
 // Find a single Course with an id
-exports.findOne = (req, res) => {
+exports.getProductById = (req, res) => {
     const id = req.params.id;
   
-    Tutorial.findById({_id: id})
+    Product.findById({_id: id})
       .then(data => {
         if (!data)
-          res.status(404).send({ message: "Not found Course with id " + id });
+          res.status(404).send({ message: "No Product found for ID - " + id });
         else res.send(data);
       })
       .catch(err => {
@@ -118,20 +100,20 @@ exports.findOne = (req, res) => {
   };
 
 // Update a course by the id in the request
-exports.update = (req, res) => {
+exports.updateProduct= (req, res) => {
     if (!req.body) {
       return res.status(400).send({
         message: "Data to update can not be empty!"
       });
     }
     
-    Tutorial.findOneAndUpdate({ _id: req.params.id }, req.body, { useFindAndModify: false, upsert: true, setDefaultsOnInsert: true })
+    Product.findOneAndUpdate({ _id: req.params.id }, req.body, { useFindAndModify: false, upsert: true, setDefaultsOnInsert: true })
       .then(data => {
         if (!data) {
           res.status(404).send({
-            message: `Cannot update Course with id=${id}. Maybe Course not their!`
+            message: "No Product found for ID " + id
           });
-        } else res.send({ message: "Course was updated successfully." });
+        } else res.send({ message: "Product was updated successfully." });
       })
       .catch(err => {
         res.status(500).send({
@@ -141,53 +123,23 @@ exports.update = (req, res) => {
   };
 
 // Delete a Course with the specified id in the request
-exports.delete = (req, res) => {
+exports.deleteProduct = (req, res) => {
   
-    Tutorial.findOneAndDelete({_id: req.params.id})
+    Product.findOneAndDelete({_id: req.params.id.toString()})
       .then(data => {
         if (!data) {
           res.status(404).send({
-            message: `Cannot delete Course with id=${id}. Maybe Course was not found!`
+            message: `No Product found for ID - ${req.params.id}!`
           });
         } else {
           res.send({
-            message: "Course was deleted successfully!"
+            message: `Product with ID - ${req.params.id} deleted successfully!`
           });
         }
       })
       .catch(err => {
         res.status(500).send({
-          message: "Could not delete Course with id=" + id
-        });
-      });
-  };
-
-// Delete all courses from the database.
-exports.deleteAll = (req, res) => {
-  Tutorial.deleteMany({})
-      .then(data => {
-        res.send({
-          message: `${data.deletedCount} Courses were deleted successfully!`
-        });
-      })
-      .catch(err => {
-        res.status(500).send({
-          message:
-            err.message || "Some error occurred while removing all Courses."
-        });
-      });
-  };
-
-// Find all published courses
-exports.findAllPublished = (req, res) => {
-  Tutorial.find({ published: true }).sort('-createdAt')
-      .then(data => {
-        res.send(data);
-      })
-      .catch(err => {
-        res.status(500).send({
-          message:
-            err.message || "Some error occurred while retrieving Courses."
+          message: "Could not delete Product with id=" + req.params.id
         });
       });
   };
