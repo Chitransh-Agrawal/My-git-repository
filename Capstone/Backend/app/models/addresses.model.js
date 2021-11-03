@@ -10,7 +10,7 @@ module.exports = mongoose => {
             contactNumber: { type : Number , required : true },
             landmark: { type : String },
             zipCode: { type : Number , required : true },
-            user:{type : Object, required:true}
+            user:{type : Object}
 
 
             

@@ -37,6 +37,7 @@ db.mongoose
 
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to Upgrad InSessionn application development by Rocky Sir." });
+  
 });
 
 require("./app/routes/addresses.routes")(app);

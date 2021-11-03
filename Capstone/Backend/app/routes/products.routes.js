@@ -8,5 +8,5 @@ module.exports = app => {
   
    router.post("/products", products.create);
     
-    app.use('/',auth,  router);
+    app.use('/', router);
   };
