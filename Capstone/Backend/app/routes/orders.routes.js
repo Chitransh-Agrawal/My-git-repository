@@ -6,7 +6,7 @@ module.exports = app => {
   
     var router = require("express").Router();
   
-  router.post("/orders", orders.enroll);
+  router.post("/orders", orders.create);
     
     app.use('/',  router);
   };

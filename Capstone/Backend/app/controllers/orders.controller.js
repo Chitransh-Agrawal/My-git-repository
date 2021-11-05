@@ -1,23 +1,26 @@
 const db = require("../models");
-const Enrollment = db.enrollments;
+const Order = db.orders;
 
 // Create and Save a user
-exports.enroll = (req, res) => {
+exports.create = (req, res) => {
   // Validate request
+  /*
   if (!req.body.userId && !req.body.courseId) {
     res.status(400).send({ message: "Enrollment should have loggedIn UserId and CourseId" });
     return;
   }
-
+*/
   // Create a new enrollment
-  const enrollment = new Enrollment({
-    userId: req.body.userId,
-    courseId: req.body.courseId,
+  const order = new Order({
+    address: { address:{_id:req.body.addressId}},
+            product: { product:{_id:req.body.productId}},
+            user: { user: "USER"},
+            quantity: req.body.quantity
   });
 
   // Save User in the database
-  enrollment
-    .save(enrollment)
+  order
+    .save()
     .then(data => {
       res.send(data);
     })
