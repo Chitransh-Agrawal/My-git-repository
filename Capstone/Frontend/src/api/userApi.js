@@ -1,7 +1,7 @@
 // imports for utils
 import { utilsApi, apiConstants } from "./utils-api";
 import * as utils from "../utils";
-var token = utils.getFromLocalStorage(utils.constants.LOCAL_STORAGE_KEY.USER).token;
+var token ;
 
 /**
  * Function to log into the application

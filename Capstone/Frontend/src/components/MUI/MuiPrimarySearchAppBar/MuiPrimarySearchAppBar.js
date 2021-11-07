@@ -21,7 +21,7 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
-
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 // imports for custom hooks
 import { useAuth } from "../../../contexts/auth";
 
@@ -177,13 +177,18 @@ const MuiPrimarySearchAppBar = ({
 
   const renderLogo = (
     // add cursorPointer class when the logo is clickable
+    
+      
     <Typography
       className={`${classes.logo} ${isLogoClickable && classes.cursorPointer}`}
       variant="inherit"
       component="h1"
-    >
-      upGrad
+    ><ShoppingCartIcon></ShoppingCartIcon>
+      upGrad E-Shop
     </Typography>
+
+    
+    
   );
 
   return (
@@ -208,16 +213,7 @@ const MuiPrimarySearchAppBar = ({
                 inputProps={{ "aria-label": "search" }}
                 onChange={handleSearchInputChange}
               />
-              <IconButton
-                className={`${classes.searchButton} ${classes.btn}`}
-                aria-label="search course"
-                aria-controls={profileMenuId}
-                aria-haspopup="false"
-                color="inherit"
-                onClick={handleSearchSubmitClick}
-              >
-                <SendIcon />
-              </IconButton>
+              
             </div>
           )}
 
@@ -237,7 +233,7 @@ const MuiPrimarySearchAppBar = ({
                 <AppsOutlinedIcon />
               </IconButton>
               <Typography variant="inherit" className={classes.categoriesLabel}>
-                Categories
+                Add Product
               </Typography>
             </div>
           )}

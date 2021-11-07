@@ -2,7 +2,7 @@
 import { utilsApi, apiConstants } from "./utils-api";
 // imports for utils
 import * as utils from "../utils";
-var token = utils.getFromLocalStorage(utils.constants.LOCAL_STORAGE_KEY.USER).token;
+var token ;
 
 /**
  * Function to search for a course
