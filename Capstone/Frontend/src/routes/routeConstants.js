@@ -2,7 +2,7 @@ export const ROUTE_URL = {
   ROOT: "/",
   ONBOARD: "/login",
   HOME: "/home",
-  DETAILS: "/courses/:id",
+  DETAILS: "/products",
   CHECKOUT: "/checkout",
   SUMMARY: "/summary",
   COURSES_LIST: "/admin/list",
