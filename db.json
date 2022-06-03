@@ -1,4 +1,4 @@
-{"products":[
+{"products":{
   {
     "_id": "5a7ebab000186e07ca9ef0b5",
     "image": "http://placehold.it/1000x400",
@@ -83,5 +83,5 @@
     "price": 66.44,
     "description": "amet sunt occaecat elit adipisicing esse ad consectetur aliquip quis amet sit consequat aliqua anim anim nulla deserunt ut qui nisi sunt culpa dolor irure"
   }
-]
+}
 }
