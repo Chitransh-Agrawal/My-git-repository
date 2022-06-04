@@ -1,25 +1,21 @@
 {"products":[
-  {
-    "_id": "5a7ebab000186e07ca9ef0b5",
-    "image": "http://placehold.it/1000x400",
-    "name": "consectetur veniam id",
-    "price": 15.63,
-    "description": "est laboris consequat proident minim elit et enim cupidatat aute eu laborum fugiat reprehenderit enim dolor nisi dolor magna id adipisicing sunt et labore sint"
+ {
+    id: 0,
+    name: "Shampoo",
+    description: "Shampoo: it's like soap, for your hair",
+    cost: 5.99
   },
   {
-    "_id": "5a7ebab04242e9bd02c851ea",
-    "image": "http://placehold.it/1000x400",
-    "name": "fugiat excepteur cupidatat",
-    "price": 87.52,
-    "description": "exercitation reprehenderit laboris incididunt ullamco sint veniam exercitation consectetur quis pariatur amet esse esse esse irure pariatur tempor eu aliquip consequat incididunt qui fugiat sunt"
+    id: 1,
+    name: "Neuhaus Chocolate",
+    description: "For when you really need the best chocolate",
+    cost: 15.75
   },
   {
-    "_id": "5a7ebab0184f02ba44265b01",
-    "image": "http://placehold.it/1000x400",
-    "name": "excepteur esse sint",
-    "price": 92.38,
-    "description": "minim id in dolore proident consequat amet elit quis nostrud consequat qui qui mollit nisi aliqua cillum culpa officia ea cillum veniam incididunt commodo amet"
+    id: 2,
+    name: "Blanket",
+    description: "A warm blanket; useful when you are cold",
+    cost: 7.99
   }
-  
 ]
 }
