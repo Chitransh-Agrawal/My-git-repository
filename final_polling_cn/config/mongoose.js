@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
 // const env = require("./enviorment");
 
-mongoose.connect(`mongodb+srv://${process.env.username}:${process.env.password}@cluster0.ab0jx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`)
+mongoose.connect(`mongodb+srv://chitransh-agrawal:lLHwm1Bi0dS0oGw2@cluster0.piqqzwo.mongodb.net/?retryWrites=true&w=majority`,
+{dbName:'polling_app'});
 //(`mongodb://localhost/polling_dev`);
 
 const db = mongoose.connection;
